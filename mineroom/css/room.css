@@ -1,0 +1,101 @@
+ul.share-buttons{
+  list-style: none;
+  padding: 0;
+  position: relative;
+  top: -112px;
+  left: 280px;
+}
+
+ul.share-buttons li{
+  display: inline;
+}
+
+ul.share-buttons .sr-only{
+  position: absolute;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+div#buildBtns {
+	position: absolute;
+	top: 50px;
+	left: 0px;
+}
+
+div#buildBtns:before, div#craftBtns:before, div#buyBtns:before {
+	content: attr(data-legend);
+	position: relative;
+	top: -5px;
+}
+
+div#craftBtns {
+	position: absolute;
+	top: 50px;
+	left: 150px;
+}
+
+div#buyBtns {
+	position: absolute;
+	top: 50px;
+	left: 300px;
+}
+
+div#storesContainer {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+
+div#stores:before, div#weapons:before {
+	position: absolute;
+	background: url(../img/sprite-crafty.png) no-repeat -1299px -321px;
+	/***background: white;***/
+	content: attr(data-legend);
+	left: 0px;
+	top: -3px;
+	width:250px;
+	font-size:8px;
+	text-align:center;
+	color:#000;
+}
+div#stores:after, div#weapons:after {
+	position: absolute;
+	background: url(../img/sprite-crafty.png) no-repeat -1299px -329px;
+	/***background: white;***/
+	content: "\00a0";
+	left: 0px;
+	top: 100%;
+	width:250px;
+	font-size:8px;
+	text-align:center;
+	color:#fff;
+}
+
+div#stores {
+	background: url(../img/sprite-crafty.png) repeat-y -640px 0;
+	position: relative;
+	z-index:10;
+	cursor: url("../img/customcursor.png"), default;
+	padding: 5px 10px;
+	width: 230px;
+	text-shadow: 0 0 3px #000000;
+}
+
+div.storeRow {
+	position: relative;
+}
+
+div#weapons {
+	background: url(../img/sprite-crafty.png) repeat-y -640px 0;
+	margin-top: 15px;
+	position: relative;
+	right: 0px;
+	cursor: url("../img/customcursor.png"), default;
+	padding: 5px 10px;
+	width: 230px;
+	text-shadow: 0 0 3px #000000;
+}

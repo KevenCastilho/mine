@@ -1,0 +1,741 @@
+@font-face {
+  font-family: 'Minecraft';
+  src: url('../fonts/mcfont.eot');
+  src: url('../fonts/mcfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/mcfont.woff') format('woff'),
+       url('../fonts/mcfont.ttf')  format('truetype'),
+       url('../fonts/mcfont.svg#svgFontName') format('svg');
+}
+@font-face { font-family: "Minecraft Regular"; src: url("../fonts/minecraft_font.eot?") format("eot"), url("../fonts/minecraft_font.woff") format("woff"), url("../fonts/minecraft_font.ttf") format("truetype"), url("font/minecraft_font.svg#Minecraft") format("svg"); font-weight: normal; font-style: normal; }
+@font-face { font-family: "MineCrafter 2.0 Regular"; src: url("../fonts/minecrafter_20.eot?") format("eot"), url("../fonts/minecrafter_20.woff") format("woff"), url("../fonts/minecrafter_20.ttf") format("truetype"), url("font/minecrafter_20.svg#MineCrafter-2.0") format("svg"); font-weight: normal; font-style: normal; }
+/* Fonts */
+
+body {
+	overflow:hidden;
+	font-weight: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	/***background-image: url('../img/bg4.png');***/
+	background-image: url('../img/location_room.png');
+	background-size:100% 100%;
+	background-repeat:no-repeat;
+	cursor: url("../img/customcursor.png"), default;
+	color: #fff;
+    font-family: "Minecraft Regular", Arial;
+	font-size:10px;	
+	
+}
+
+a{
+	cursor: url("../img/customcursor_hand.png"), pointer;
+}
+
+body, .tooltip, select.menuBtn {
+	font-weight: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #fff;
+    font-family: "Minecraft Regular", Arial;
+	font-size:10px;
+}
+
+.tooltip, select.menuBtn {
+		width: 100px;
+	background-color:#212121;
+	background-size:100% 100%;
+	background-repeat:no-repeat;
+	-webkit-border-radius: 1px 1px 1px 1px;
+	border-radius: 1px 1px 1px 1px;
+	box-shadow:0 0 0 3px #555555, 0 0 0 6px #000000;
+	-webkit-box-shadow:0 0 0 3px #555555, 0 0 0 6px #000000;
+	padding-top:5px;
+	padding-bottom:10px;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	margin: 0;
+}
+
+::selection {
+	background-color: transparent;
+}
+
+::-moz-selection {
+	background-color: transparent;
+}
+
+#description textarea::selection {
+	background-color: gray;
+}
+
+#description textarea::-moz-selection {
+	background-color: gray;
+}
+
+/* Framework stuff */
+
+div.clear {
+	clear: both;
+}
+
+div#wrapper {
+	margin: auto;
+	width: 700px;
+	padding: 20px 0 0 220px;
+	position: relative;
+}
+
+div#saveNotify {
+	position: absolute;
+	top: 20px;
+	right: 0px;
+	opacity: 0;
+}
+
+div#content {
+	position: relative;
+	overflow: hidden;
+	height: 700px;
+}
+
+div#header {
+	padding-bottom: 20px;
+	height: 20px;
+}
+
+.menu {
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+	color: #666;
+	z-index: 10;
+}
+
+.menu span {
+	cursor: url("../img/customcursor_hand.png"), pointer;
+	float: right;
+	margin-left: 20px;
+	color:#fff;
+}
+
+.customSelect {
+	height: 20px;
+}
+
+span.customSelectOptions {
+	margin: 0;
+	width: 120px;
+}
+
+.customSelectOptions > ul {
+	max-height: 20px;
+	width: 120px;
+	overflow: hidden;
+	-webkit-transition: max-height 1s;
+	transition: max-height 1s;
+	padding: 0;
+	margin: 0;
+	bottom: 0;
+	position: absolute;
+	right: 0;
+}
+
+.customSelectOptions > ul:hover {
+	max-height: 600px;
+}
+
+.customSelectOptions > ul > li {
+	padding: 0 0 3px 0;
+	list-style-type: none;
+	height: 20px;
+}
+
+.customSelectOptions > ul > li:last-child {
+	padding: 0;
+}
+
+.customSelectOptions > ul > li:hover {
+	text-decoration: underline;
+}
+
+.customSelectOptions > ul > li:first-child:hover {
+	cursor: url("../img/customcursor.png"), default;
+	text-decoration: none;
+}
+
+.menu span:hover {
+	text-decoration: underline;
+}
+
+.menu .appStore {
+	font-weight: bold;
+}
+
+div#header {
+	position:relative;
+	left:-10px;
+}
+
+div.headerButton {
+	font-size: 18px;
+	cursor: url("../img/customcursor_hand.png"), pointer;
+	float: left;
+	padding-left: 10px !important;
+	padding-bottom: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+
+	display: block;
+    background-image: url(../img/button_header_center.png);
+    border: 2px solid #56472A;
+    -moz-box-shadow: -2px -2px 3px #333;
+    -webkit-box-shadow: -2px -2px 3px #333;
+    box-shadow: -2px -2px 3px #333;
+    color: #000;
+    font-family: "Minecraft Regular", Arial;
+    text-decoration: none;
+    text-transform: capitalize;
+	margin-left:12px !important;
+	font-size:10px;
+}
+
+div.headerButton:hover {
+	background-image: url(../img/button_header_center_disabled.png);
+	color:#FFF;
+	cursor: url("../img/customcursor_hand.png"), pointer;
+}
+
+div.headerButton:first-child {
+	border-left: none;
+	margin-left: 0px;
+	padding-left: 0px;
+}
+
+div.headerButton.selected, div.headerButton.selected:hover {
+	cursor: url("../img/customcursor_cross.png"), default !important;
+	text-decoration: underline;
+}
+
+div#outerSlider {
+	position: absolute;
+}
+
+div#outerSlider > div {
+	position: relative;
+	float: left;
+	width: 700px;
+	height: 700px;
+	overflow: hidden;
+}
+
+div#locationSlider {
+	position: absolute;
+}
+
+div.location {
+	position: relative;
+	margin-top: 20px;
+	float: left;
+	width: 700px;
+}
+
+div.row_key {
+	clear: both;
+	float: left;
+}
+
+div.row_val {
+	float: right;
+}
+
+div.total {
+	font-weight: bold;
+}
+
+/* Notifications */
+
+div#notifications:before {
+	background: url(../img/book_before.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+    content: " ";
+    display: block;
+    width: 388px;
+    height: 38px;
+    position: absolute;
+    top: -15px;
+    left: 1px;
+    z-index: 2;
+}
+
+div#notifications:after {
+	background: url(../img/book_after.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+    content: " ";
+    display: block;
+    width: 388px;
+    height: 38px;
+    position: absolute;
+    top: 94%;
+    left: 1px;
+    z-index: 2;
+}
+
+div#notifications {
+	font-size:14px;
+	background-image: url(../img/book.png);
+	background-repeat:no-repeat;
+	background-size:100% 100%;
+	position: absolute;
+	top: 20px;
+	left: -200px;
+	padding-top:40px;
+	padding-right:30px;
+	padding-left:40px;
+	height: 80%;
+	width: 320px;
+	overflow: hidden;
+	color:#000;
+	-webkit-border-radius: 6px 6px 6px 6px;
+	border-radius: 6px 6px 6px 6px;
+	-webkit-box-shadow: 0 0 0 2px #000000;
+	box-shadow: 0 0 0 2px #000000;
+}
+
+div#notifications div.notification {
+	margin-bottom: 10px;
+}
+
+div#notifyGradient {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+}
+
+/* Button */
+
+div.button {
+	position: relative;
+	text-align: center;
+	width: 100px;
+	margin-left: 2px;
+	margin-bottom: 8px;
+	padding: 5px 10px;
+	cursor: url("../img/customcursor_hand.png"), pointer;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: url('../img/button_center.png');
+	background-repeat: repeat;
+	font-family: Minecraft;
+	font-size: 9px;
+	color: white;
+	outline: 2px solid black;
+	text-shadow: 3px 3px #4C4C4C;
+	border-bottom: 4px solid #565656;
+	border-right: 2px solid #565656;
+	border-left: 2px solid #AAA;
+	border-top: 2px solid #AAA;
+	box-sizing: border-box;
+}
+
+div.button:hover {
+	text-decoration: none;
+	border-bottom: 4px solid #59639A;
+	border-right: 2px solid #59639A;
+	border-left: 2px solid #BDC6FF;
+	border-top: 2px solid #BDC6FF;
+	background-image: url('../img/button_active_center.png') !important;
+	background-repeat: repeat;
+	color: #FFFFA0;
+}
+
+div.button.disabled, div.button.disabled:hover {
+	cursor: url("../img/customcursor_cross.png"), default !important;
+	color: white;
+	outline: 2px solid black;
+	text-shadow: 3px 3px #4C4C4C;
+	border-bottom: 4px solid #020202;
+	border-right: 2px solid #020202;
+	border-left: 2px solid #AAA;
+	border-top: 2px solid #AAA;
+	box-sizing: border-box;
+	background-image: url('../img/button_disable_center.png') !important;
+	background-repeat: repeat;
+}
+
+div.button div.cooldown {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: -1;
+	height: 100%;
+	background-color: #DDDDDD;
+}
+
+/* Up/Down buttons. They're complicated! */
+
+.upBtn, .dnBtn, .upManyBtn, .dnManyBtn {
+	position: absolute;
+	width: 14px;
+	height: 12px;
+	cursor: url("../img/customcursor_hand.png"), pointer;
+	font-family: "Times New Roman", Times, serif !important;
+}
+
+.upBtn, .dnBtn {
+	right: 0px;
+}
+
+.upManyBtn, .dnManyBtn {
+	right: -15px;
+}
+
+.upBtn.disabled, .dnBtn.disabled, .upManyBtn.disabled, .dnManyBtn.disabled {
+	cursor: url("../img/customcursor.png"), default;
+}
+
+.upBtn {
+	top: -3px;
+}
+
+.upManyBtn {
+	top: -3px;
+}
+
+.upBtn:after, .upBtn:before, .upManyBtn:after, .upManyBtn:before {
+	position: absolute;
+	border: medium solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	bottom: 7px;
+}
+
+.upBtn:after, .upManyBtn:after {
+	border-color: transparent transparent white;
+}
+
+.upBtn:before, .upManyBtn:before {
+	border-color: transparent transparent black;
+}
+
+.upBtn.disabled:before, .upManyBtn.disabled:before {
+	border-color: transparent transparent #999;
+}
+
+
+.dnBtn {
+	bottom: -3px;
+}
+
+.dnManyBtn {
+	bottom: -3px;
+}
+
+.dnBtn:after, .dnBtn:before, .dnManyBtn:after, .dnManyBtn:before {
+	position: absolute;
+	border: medium solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	top: 2px;
+}
+
+/* Overall size of buttons controlled by this style
+   border-width and margin-left should be the same. */
+.upBtn:before, .dnBtn:before, .upManyBtn:before, .dnManyBtn:before {
+	border-width: 6px;
+	left: 50%;
+	margin-left: -6px;
+}
+
+/* Thickness of up/down button lines controlled by this style.
+   border-width and margin-left should be the same.
+   Thickness = :before.border-width minus :after.border-width */
+.upBtn:after, .dnBtn:after {
+	border-width: 4px;
+	left: 50%;
+	margin-left: -4px;
+}
+
+/* See comment on .upBtn:after, .dnBtn:after */
+.upManyBtn:after, .dnManyBtn:after {
+	border-width: 3px;
+	left: 50%;
+	margin-left: -3px;
+}
+
+.dnBtn:after, .dnManyBtn:after {
+	border-color: white transparent transparent;
+}
+
+.dnBtn:before, .dnManyBtn:before {
+	border-color: black transparent transparent;
+}
+
+.dnBtn.disabled:before, .dnManyBtn.disabled:before {
+	border-color: #999 transparent transparent;
+}
+
+div.button div.tooltip {
+	width: 100px;
+	background-color:#212121;
+	background-size:100% 100%;
+	background-repeat:no-repeat;
+	-webkit-border-radius: 1px 1px 1px 1px;
+	border-radius: 1px 1px 1px 1px;
+	box-shadow:0 0 0 3px #555555, 0 0 0 6px #000000;
+	-webkit-box-shadow:0 0 0 3px #555555, 0 0 0 6px #000000;
+	padding-top:5px;
+	padding-bottom:10px;
+}
+
+/* Tooltip */
+
+div.tooltip {
+	display: none;
+	padding: 2px 5px;
+	position: absolute;
+	z-index: 999;
+	
+}
+
+.tooltip.bottom {
+	top: 30px;
+}
+
+.tooltip.right {
+	left: 2px;
+}
+
+.tooltip.left {
+	right: 0px;
+}
+
+.tooltip.top {
+	bottom: 20px;
+}
+
+*:hover > div.tooltip {
+	display: block;
+}
+
+div.tooltip:hover {
+	display: none !important;
+}
+
+.disabled:hover > div.tooltip, .button.free:hover > div.tooltip {
+	display: none;
+}
+
+#event .button.disabled:hover > div.tooltip {
+	display: block;
+}
+
+/* Events */
+
+.eventPanel {
+	background: url(../img/panel.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+	border: 2px solid transparent;
+	left: 250px;
+	padding: 20px;
+	position: absolute;
+	top: 90px;
+	width: 335px;
+	z-index: 20;
+}
+
+body.noMask .eventPanel {
+	background-color: black;
+}
+
+.eventPanel:before {
+	opacity: 0.6;
+	content: " ";
+	height: 700px;
+	left: -252px;
+	position: absolute;
+	top: -75px;
+	width: 920px;
+	z-index: -2;
+}
+
+body.noMask .eventPanel:before {
+	opacity: 0;
+}
+
+.eventPanel:after {
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	width: 100%;
+	height: 100%;
+	content: " ";
+	z-index: -2;
+}
+
+body.noMask .eventPanel:after {
+	border-color: white;
+}
+
+.eventPanel .button {
+	float:left;
+	margin-right: 20px;
+}
+
+body.noMask .eventPanel .button {
+	border-color: white;
+	color: white;
+}
+
+.eventTitle {
+    display: inline-block;
+    background: url(../img/sprite-crafty.png) no-repeat -1299px -274px;
+    font-weight: bold;
+    position: absolute;
+    width: 300px;
+    top: -20px;
+    left: 0px;
+	padding-left: 25px;
+	height: 12px;
+	color: #000;
+    font-size: 8px;
+	padding-top: 8px;
+}
+
+body.noMask .eventTitle {
+	color: white;
+}
+
+.eventTitle:after {
+	background: url(../img/sprite-crafty.png) no-repeat -1299px -274px;
+	bottom: 32%;
+	content: " ";
+	height: 5px;
+	left: 0;
+	position: absolute;
+	width: 100%;
+	z-index: -1;
+}
+
+body.noMask .eventTitle:after {
+	background-color: black;
+}
+
+#description {
+	position: relative;
+	min-height: 100px;
+}
+
+#description textarea {
+	width: 100%;
+	height: 225px;
+}
+
+body.noMask #description {
+	color: white;
+}
+
+#description > div {
+	padding-bottom: 20px;
+}
+
+.take-all-button {
+	float: none;
+}
+
+#buttons > .button {
+	margin: 0 5px 5px;
+	margin-right: 15px;
+}
+
+/* Combat! */
+#description div.fighter {
+	padding: 0px;
+	position: absolute;
+	bottom: 15px;
+}
+
+#wanderer {
+	left: 25%;
+}
+
+#enemy {
+	right: 25%;
+}
+
+.hp {
+	position: absolute;
+	top: -15px;
+	margin-left: -50%;
+}
+
+#description .bullet {
+	padding: 0px 20px 0px 20px;
+	bottom: 25px;
+	position: absolute;
+	height: 1px;
+	line-height: 1px;
+}
+
+.damageText {
+	position: absolute;
+	bottom: 15px;
+	left: 50%;
+	margin-left: -50%;
+}
+
+#lootButtons {
+	padding-bottom: 0px !important;
+	margin: 20px 0 5px 0;
+	position: relative;
+}
+
+#lootButtons:before {
+	content: attr(data-legend);
+	position: absolute;
+	top: -25px;
+	left: 0px;
+}
+
+#dropMenu {
+	background: none repeat scroll 0 0 white;
+	border: 1px solid black;
+	position: absolute;
+	z-index: 100;
+	padding-top: 5px;
+	text-align: left;
+	box-shadow: -1px 3px 2px #666;
+	cursor: url("../img/customcursor.png"), default;
+}
+
+#dropMenu:before {
+	content: attr(data-legend);
+	border-bottom: 1px solid black;
+	display: block;
+	margin-bottom: 5px;
+	padding: 0px 0px 5px 5px;
+}
+
+#dropMenu > div {
+	padding: 0px 5px 5px 5px;
+	cursor: url("../img/customcursor_hand.png"), pointer;
+}
+
+#dropMenu > div:hover {
+	text-decoration: underline;
+}

@@ -1,0 +1,99 @@
+<html>
+	<head>
+		<title>Minecraft</title>
+		<style>
+		@font-face { font-family: "Minecraft Regular"; src: url("font/minecraft_font.eot?") format("eot"), url("font/minecraft_font.woff") format("woff"), url("font/minecraft_font.ttf") format("truetype"), url("font/minecraft_font.svg#Minecraft") format("svg"); font-weight: normal; font-style: normal; }
+		body {
+		font-family:Minecraft Regular;
+		color:#FFFFFF;
+		background-image:url('img/bg.jpg');
+		}
+		applet {
+		position:fixed;
+		left:0xp;
+		top:0px;
+		width:100%;
+		height:100%;
+		}
+		input[type=text] {
+		font-family:Minecraft Regular;
+		color:FFFFFF;
+		background-color:000000;
+		border-style: groove;
+		border-color: silver;
+		}
+		select {
+		background-image:url('http://pixelartmaker.com/art/54b2d246e0e35be.png');
+		background-position:center;
+		font-family:Minecraft Regular;
+		color:FFFFFF;
+		}
+		
+input[type=submit]{
+  height: 35px;
+  width: 180px;
+  outline: 2px solid black;
+  position: relative;
+  top:20px;
+  left:10px;
+  margin-top: 0;
+  display: inline-block;
+  background-image: url('images/button_center.png');
+  background-repeat: repeat;
+  padding: 0;
+  font-family: Minecraft Regular;
+  text-align: center;
+  color: white;
+  text-shadow: 3px 3px #4C4C4C;
+  border-bottom: 4px solid #565656;
+  border-right: 2px solid #565656;
+  border-left: 2px solid #AAA;
+  border-top: 2px solid #AAA;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+input[type=submit]:hover{
+  border-bottom: 4px solid #59639A;
+  border-right: 2px solid #59639A;
+  border-left: 2px solid #BDC6FF;
+  border-top: 2px solid #BDC6FF;
+  background-image: url('images/button_active_center.png');
+  color: #FFFFA0;
+  cursor:pointer;
+}
+		</style>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta charset="utf-8"/>
+	</head>
+	<body>
+	<form action="home.php" method="POST">
+		<table style="position:fixed;top:38%;left:38%;">
+			<tr>
+				<td>Nickname: </td/><td><input type="text" name="nick" /></td>
+			</tr>
+			<tr>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+			</tr>
+			<tr>
+				<td>Jogar Demo? </td/><td>
+				<input type="radio" name="demo" value="1"><label for="1">Sim</label>
+				<input type="radio" name="demo" value="0"><label for="0">Não</label>
+				</td>
+			</tr>
+			<tr>
+				<td></td/><td><input class="button" type="submit" value="submit" /></td>
+			</tr>
+		</table>
+	</form>
+	</body>
+</html>
